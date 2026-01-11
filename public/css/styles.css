@@ -275,6 +275,10 @@ nav a:link {
   height: 69%;
 }
 
+.container-study .main-content-wrapper {
+  padding-bottom: 0;
+}
+
 .newblast {
   position: absolute;
   top: 0;
@@ -569,7 +573,7 @@ nav a:link {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
-  padding: 132px 0 55px;
+  padding: 132px 0 40px;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   border-image-slice: 171 57 57 515 fill;
