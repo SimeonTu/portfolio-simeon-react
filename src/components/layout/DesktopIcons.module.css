@@ -1,0 +1,60 @@
+.desktopIcons {
+  display: block;
+  z-index: 9000;
+  width: max-content;
+}
+
+.desktop {
+  display: block;
+}
+
+.desktop a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+}
+
+.desktop a:link {
+  color: white;
+}
+
+.desktop a:visited {
+  color: rgb(255, 255, 255);
+}
+
+.desktop a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  list-style-type: none;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.icons img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3px;
+  width: 37px;
+  height: auto;
+}
+
+/* Hide on mobile */
+@media screen and (max-width: 632px) {
+  .desktopIcons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 325px), screen and (max-height: 330px) {
+  .desktopIcons {
+    display: none;
+  }
+}

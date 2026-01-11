@@ -1,0 +1,106 @@
+.backButton {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: var(--green);
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.backButton:hover {
+  background-color: var(--green-lighter);
+}
+
+.studyHeader {
+  margin: 2rem 0;
+}
+
+.headerImg {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.studyTitle {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--pink-shadow);
+  margin-bottom: 2rem;
+}
+
+.studyContent {
+  text-transform: none;
+  padding: 0 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.studyContent h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--green);
+  text-shadow: 1px 1px var(--pink-shadow);
+}
+
+.studyContent p {
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.techLogos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.techLogos img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.links a {
+  padding: 10px 20px;
+  background-color: var(--green);
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.links a:hover {
+  background-color: var(--green-lighter);
+}
+
+@media screen and (max-width: 632px) {
+  .studyContent {
+    padding: 0 1rem;
+  }
+
+  .studyTitle {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}

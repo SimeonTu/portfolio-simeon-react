@@ -1,0 +1,22 @@
+.scrollIndicator {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 100;
+  animation: float 2s ease-in-out infinite;
+}
+
+.verticalText {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: DeterminationSansWeb, sans-serif;
+  font-size: 26px;
+  color: black;
+}
+
+.arrow {
+  font-size: 28px;
+  color: black;
+  text-align: center;
+}

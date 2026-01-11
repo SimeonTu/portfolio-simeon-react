@@ -1,0 +1,65 @@
+.h1About {
+  margin-top: 20px;
+}
+
+.pAbout {
+  margin-top: 1.5rem;
+  padding: 0 3rem;
+  text-transform: none;
+}
+
+.aboutCardsWrapper {
+  text-transform: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0 2rem 0 2rem;
+}
+
+.toolsCard {
+  width: fit-content;
+  padding: 10px 15px 10px 15px;
+  border: solid 2px var(--green);
+  border-radius: 10px;
+  background-color: var(--green-lighter);
+  font-weight: 100;
+  font-size: 0.9em;
+  max-width: 300px;
+}
+
+.cardTitle {
+  margin-bottom: 0.5rem;
+  color: black;
+  text-shadow: 1px 1px pink;
+  letter-spacing: 1px;
+}
+
+.toolsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.toolsWrapper span {
+  background-color: var(--green);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 632px) {
+  .h1About {
+    margin-top: 55px;
+  }
+
+  .pAbout {
+    padding: 0 1rem;
+  }
+
+  .aboutCardsWrapper {
+    padding: 0 1rem;
+  }
+}

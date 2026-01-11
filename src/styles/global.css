@@ -1,0 +1,69 @@
+/* CSS Variables */
+:root {
+  --green: rgb(45, 228, 45);
+  --green-lighter: rgba(45, 228, 45, 0.2);
+  --green-light: rgba(45, 228, 45, 0.4);
+  --pink-shadow: rgb(255, 161, 194);
+  --background-img: url("/img/fondo_purplestars.gif");
+
+  /* Tag colors from original */
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 33%, 9%);
+}
+
+/* Font Face Declarations */
+@font-face {
+  font-family: DeterminationSansWeb;
+  src: url("/fonts/DeterminationSansWebRegular-369X.ttf");
+}
+
+@font-face {
+  font-family: DeathMohawk;
+  src: url("/fonts/DeathMohawkPersonalUseRegular-8MlEM.otf");
+}
+
+@font-face {
+  font-family: Minecraft;
+  src: url("/fonts/Minecraft.ttf");
+}
+
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* HTML and Body */
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: DeterminationSansWeb, sans-serif;
+  background-image: var(--background-img);
+}
+
+/* Global Utility Classes */
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-pulse-grow:hover,
+.hvr-pulse-grow:focus,
+.hvr-pulse-grow:active {
+  animation: hvr-pulse-grow 150ms;
+}

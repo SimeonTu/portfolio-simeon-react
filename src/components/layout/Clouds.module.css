@@ -1,0 +1,29 @@
+.cloud {
+  width: auto;
+  position: absolute;
+  right: 25px;
+  top: 100px;
+}
+
+.cloud img {
+  width: 350px;
+}
+
+.cloud2 {
+  width: auto;
+  position: fixed;
+  left: 25px;
+  bottom: 500px;
+}
+
+.cloud2 img {
+  width: 300px;
+}
+
+/* Hide on mobile */
+@media screen and (max-width: 632px) {
+  .cloud,
+  .cloud2 {
+    display: none;
+  }
+}

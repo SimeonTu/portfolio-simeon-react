@@ -1,0 +1,41 @@
+.scoreboard {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: var(--green-light);
+  border: 2px solid var(--green);
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-shadow: 0.75px 0.75px var(--pink-shadow);
+}
+
+.scoreboard.visible {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.resetButton {
+  margin-top: 5px;
+  height: auto;
+  padding: 5px 10px;
+  background-color: var(--green);
+  border: 2px solid #000;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: DeterminationSansWeb, sans-serif;
+  font-size: 14px;
+}
+
+.resetButton:hover {
+  background-color: var(--green-lighter);
+}
+
+.resetButton:active {
+  background-color: red;
+}

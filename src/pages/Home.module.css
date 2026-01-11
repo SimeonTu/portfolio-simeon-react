@@ -1,0 +1,107 @@
+.logoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoDiv img {
+  padding: 0 10px;
+}
+
+.logoText {
+  font-family: DeathMohawk, sans-serif;
+  font-size: 100px;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px var(--pink-shadow);
+  height: 110px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.logoCat {
+  width: unset;
+}
+
+.centerImage {
+  border: 3.5px ridge rgba(37, 0, 50, 0.5);
+  margin-bottom: 5px;
+}
+
+.awesome {
+  font-style: italic;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #313131;
+  font-size: 45px;
+  font-weight: bold;
+  animation: colorchange 20s infinite alternate;
+}
+
+.shortDescription {
+  display: none;
+  padding: 0 2rem;
+  margin-top: 0.5rem;
+}
+
+.longDescription {
+  display: block;
+  padding: 0 2rem;
+  margin-top: 0.5rem;
+}
+
+:global(.index-links) {
+  display: block !important;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1030px) {
+  .logoCat {
+    width: 55px;
+  }
+
+  .logoText {
+    height: 100px;
+    font-size: 90px;
+  }
+
+  .shortDescription {
+    display: block;
+  }
+
+  .longDescription {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 633px) and (max-width: 850px) {
+  .logoText {
+    height: 80px;
+    font-size: 80px;
+  }
+
+  .centerImage {
+    width: 140px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 632px) {
+  .logoDiv img {
+    padding: 0 5vw;
+  }
+
+
+  .logoText::after {
+    content: "Simeon";
+  }
+
+  .logoDiv {
+    margin-top: 40px;
+  }
+}

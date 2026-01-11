@@ -1,0 +1,25 @@
+.sizeWarning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--background-img);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.sizeWarning p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px var(--pink-shadow);
+  color: black;
+  font-size: 1.2em;
+}

@@ -1,0 +1,14 @@
+# Cloudflare Pages configuration
+# This file is optional - Cloudflare Pages can auto-detect Vite projects
+# But having it makes the configuration explicit
+
+name = "portfolio-simeon-react"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[build.upload]
+format = "service-worker"
+dir = "dist"

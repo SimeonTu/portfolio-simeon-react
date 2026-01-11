@@ -1,0 +1,23 @@
+.footer {
+  display: none;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer img {
+  cursor: pointer;
+  width: 30px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 632px) {
+  .footer {
+    padding-bottom: unset;
+  }
+}
