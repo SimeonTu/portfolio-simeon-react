@@ -49,31 +49,31 @@ function DraggableWindow({ children }) {
     const node = nodeRef.current;
     if (!node) return;
 
-    // Measure the actual rendered size (includes `.browser-frame` padding/chrome),
-    // then center inside the viewport area above the taskbar.
-    node.style.transform = 'translate(0,0)'; // mirror legacy start behavior (avoid transform offsets)
-    node.style.left = '0px';
-    node.style.top = '0px';
+    const isMobileLayout =
+      window.matchMedia('(max-width: 632px) and (min-height: 330px)').matches ||
+      window.matchMedia('(min-width: 633px) and (max-height: 525px) and (min-height: 330px)').matches;
 
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const availableHeight = Math.max(0, vh - TASKBAR_HEIGHT_PX);
+    // On mobile/landscape, the site uses a traditional document-scrolling layout.
+    // The CSS media queries set `.browser-frame { position: relative; top: 0; left: 0; transform: none; ... }`.
+    // We must NOT override that with inline styles (otherwise it appears centered and can't scroll properly).
+    if (isMobileLayout) {
+      node.style.left = '';
+      node.style.top = '';
+      node.style.transform = '';
+      initialPosRef.current = { x: 0, y: 0 };
+      return;
+    }
 
+    // Desktop: match the original static site initial placement, driven by the `.browser-frame` CSS:
+    //   top: 30%; left: 50%; transform: translate(-50%, -30%)
+    // Dragging clears transforms at start (handled in `onPointerDown`), mirroring the legacy behavior.
+    node.style.left = '50%';
+    node.style.top = '30%';
+    node.style.transform = 'translate(-50%, -30%)';
+
+    // Store the initial px position for the easter-egg checks.
     const rect = node.getBoundingClientRect();
-    const w = rect.width || 850;
-    const h = rect.height || 550;
-
-    const maxLeft = Math.max(0, vw - w);
-    const maxTop = Math.max(0, availableHeight - h);
-
-    const left = Math.max(0, Math.min(Math.round(vw / 2 - w / 2), maxLeft));
-    const top = Math.max(0, Math.min(Math.round(availableHeight / 2 - h / 2), maxTop));
-
-    node.style.left = `${left}px`;
-    node.style.top = `${top}px`;
-
-    const initial = { x: left, y: top };
-    initialPosRef.current = initial;
+    initialPosRef.current = { x: rect.left, y: rect.top };
   }, [location.pathname]);
 
   // Imperative drag logic (pointer events + pointer capture), matches jQuery UI feel.

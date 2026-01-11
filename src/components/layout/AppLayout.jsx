@@ -13,6 +13,32 @@ import PokemonCursor from '../effects/PokemonCursor';
 function AppLayout() {
   const location = useLocation();
 
+  // SPA route changes don't reset scroll like full page loads do.
+  // Reset both the document scroll and the internal window scroller so every page starts at the top.
+  useEffect(() => {
+    // Document scroll (mobile layout)
+    try {
+      window.scrollTo(0, 0);
+      document.documentElement?.scrollTo?.(0, 0);
+      document.body?.scrollTo?.(0, 0);
+    } catch {
+      // ignore
+    }
+
+    // Internal window scroll (desktop layout)
+    const resetInternalScroll = () => {
+      const scroller = document.querySelector('.main-content-wrapper');
+      if (scroller && scroller instanceof HTMLElement) {
+        scroller.scrollTop = 0;
+      }
+    };
+
+    // Run now + next frame (after route content mounts)
+    resetInternalScroll();
+    const raf = window.requestAnimationFrame(resetInternalScroll);
+    return () => window.cancelAnimationFrame(raf);
+  }, [location.pathname]);
+
   // In a SPA, clicked <Link> elements can remain focused after navigation.
   // Our legacy CSS animates `.hvr-pulse-grow:focus`, so we blur on route change
   // to match the static site's behavior (full page load clears focus).

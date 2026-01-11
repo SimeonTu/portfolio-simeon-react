@@ -1,4 +1,5 @@
 import useResponsive from '../../hooks/useResponsive';
+import styles from './SizeWarning.module.css';
 
 function SizeWarning() {
   const { isTooSmall } = useResponsive();
@@ -6,7 +7,7 @@ function SizeWarning() {
   if (!isTooSmall) return null;
 
   return (
-    <div className="size-warning">
+    <div className={styles.sizeWarning}>
       <p>Your screen size is too small :&#40;</p>
     </div>
   );

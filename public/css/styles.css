@@ -1381,6 +1381,27 @@ footer img {
 /* medium mobile */
 @media (width <= 632px) and (330px <= height) {
 
+  /* Ensure only ONE scroll container on mobile (the document).
+     Setting both html+body to `overflow: scroll` can show two scrollbars in desktop emulation. */
+  html {
+    overflow-y: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    overflow: visible;
+    height: auto;
+  }
+
+  /* On mobile the layout is “traditional page scroll”.
+     Prevent nested scroll containers (which show up as a second scrollbar in desktop emulation). */
+  .container,
+  main,
+  .main-content-wrapper {
+    overflow: visible;
+  }
+
   .secret {
     display: none;
   }
@@ -1445,7 +1466,7 @@ footer img {
     position: relative;
     background: none;
     resize: none;
-    overflow: auto;
+    overflow: visible;
     width: auto;
     height: auto !important;
     font-size: 1.5em;
@@ -1456,7 +1477,7 @@ footer img {
     font-size: 23px;
     width: 100%;
     object-fit: contain;
-    overflow: auto;
+    overflow: visible;
     padding: 0;
     background-image: none;
     /* border: 5px solid black; */
@@ -1514,8 +1535,6 @@ footer img {
 
   body {
     background-image: url("../img/pink-background.gif");
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
   }
 
   /* Case study backgrounds (mobile): match the original HTML behavior */
@@ -1667,6 +1686,26 @@ footer img {
 
 /* landscape mode */
 @media (width >= 633px) and (330px <= height <= 525px) {
+
+  /* Ensure only ONE scroll container in landscape-mobile (the document). */
+  html {
+    overflow-y: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    overflow: visible;
+    height: auto;
+  }
+
+  /* Same idea as the mobile breakpoint: avoid nested scroll containers. */
+  .container,
+  main,
+  .main-content-wrapper {
+    overflow: visible;
+  }
+
   .secret {
     display: none;
   }
@@ -1719,8 +1758,6 @@ footer img {
 
   body {
     background-image: url("../img/pink-background.gif");
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
   }
 
   /* Case study backgrounds (landscape): match the original HTML behavior */
@@ -1740,7 +1777,7 @@ footer img {
     background: none;
     position: relative;
     resize: none;
-    overflow: auto;
+    overflow: visible;
     width: auto;
     height: auto !important;
     font-size: 1.5em;
@@ -1758,7 +1795,7 @@ footer img {
     left: 0;
     transform: none;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
     box-shadow: none;
     border: 0;
     background-image: none;
