@@ -133,7 +133,7 @@ function Work() {
 
             {!!project.caseStudy && (
               <div className="click-me-container">
-                <div className="click-me-text">CLICK ME!</div>
+                <div className="click-me-text">Case study</div>
               </div>
             )}
 
