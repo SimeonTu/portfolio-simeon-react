@@ -1,0 +1,9 @@
+## Cloudflare Pages Functions local dev vars
+## Copy to `.dev.vars` (do not commit) for `wrangler pages dev`.
+
+# Resend API key (keep this secret)
+RESEND_API_KEY="REPLACE_ME"
+
+# Optional: where contact form emails should be delivered
+CONTACT_TO_EMAIL="contact@simeontu.com"
+
