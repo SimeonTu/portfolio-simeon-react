@@ -16,9 +16,7 @@ function CookieCaseStudy() {
         <div className="study-header">
           <div className="study-flavor-text" style={{ alignItems: 'center' }}>
             <img className="cookie-img" src="/img/real-cookie.png" alt="Cookie" />
-            <h1 className="study-h1 awesome">
-              <TextWobble>Cookie</TextWobble>
-            </h1>
+            <TextWobble className="study-h1 awesome">Cookie</TextWobble>
             <div className="cookie-img-new-container">
               <img className="cookie-img" src="/img/real-cookie.png" alt="Cookie" />
               <img className="newblast" src="/img/newblast.gif" alt="New" />

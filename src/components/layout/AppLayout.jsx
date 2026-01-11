@@ -23,6 +23,22 @@ function AppLayout() {
     }
   }, [location.pathname]);
 
+  // On mobile, the legacy CSS applies case-study background images to `body` via ids.
+  // On desktop, we apply backgrounds to the window via `.cookie-bg/.dev-events-bg/.ifdb-bg`.
+  useEffect(() => {
+    const path = location.pathname;
+    let nextId = '';
+    if (path.includes('/case-studies/cookie')) nextId = 'cookie-body';
+    if (path.includes('/case-studies/dev-events')) nextId = 'dev-events-body';
+    if (path.includes('/case-studies/ifdb')) nextId = 'ifdb-body';
+
+    document.body.id = nextId;
+
+    return () => {
+      if (document.body.id === nextId) document.body.id = '';
+    };
+  }, [location.pathname]);
+
   // Determine taskbar text based on route
   const getTaskbarText = () => {
     if (location.pathname === '/') return 'Welcome';

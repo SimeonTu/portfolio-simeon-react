@@ -44,6 +44,9 @@ body {
   /* cursor: url("../img/arrow.cur"), auto; */
 }
 
+/* Case study backgrounds are applied to the draggable window/container classes:
+   `.cookie-bg`, `.dev-events-bg`, `.ifdb-bg` */
+
 .cloud {
   width: auto;
   position: absolute;
@@ -342,6 +345,8 @@ nav a:link {
 /* IFDB */
 .ifdb-bg {
   background-image: url("../img/bg_bluewhiteflowers.gif");
+  background-repeat: repeat;
+  background-position: top left;
 }
 
 #main-ifdb {
@@ -484,6 +489,8 @@ nav a:link {
 
 .cookie-bg {
   background-image: url("../img/bg_yellowzinnia.jpg");
+  background-repeat: repeat;
+  background-position: top left;
 }
 
 .cookie-img {
@@ -526,6 +533,8 @@ nav a:link {
 
 .dev-events-bg {
   background-image: url("../img/wp24.gif");
+  background-repeat: repeat;
+  background-position: top left;
 }
 
 .globe-new-container {
@@ -620,6 +629,29 @@ main {
   height: 100%;
   text-transform: uppercase;
   overflow: auto;
+}
+
+/* Case study backgrounds:
+   - Desktop: apply to the window content area (`main`) via the container classes
+   - Mobile: `body` overrides live inside the mobile media queries further down */
+@media (width >= 633px) {
+  .cookie-bg main {
+    background-image: url("../img/bg_yellowzinnia.jpg");
+    background-repeat: repeat;
+    background-position: top left;
+  }
+
+  .dev-events-bg main {
+    background-image: url("../img/wp24.gif");
+    background-repeat: repeat;
+    background-position: top left;
+  }
+
+  .ifdb-bg main {
+    background-image: url("../img/bg_bluewhiteflowers.gif");
+    background-repeat: repeat;
+    background-position: top left;
+  }
 }
 
 /* start grid fallback */
@@ -1356,9 +1388,6 @@ footer img {
   }
 
   /* DEV EVENTS CASE STUDY FILES */
-  #dev-events-body {
-    background-image: url("../img/wp24.gif");
-  }
 
   .dev-events-fig-2,
   .dev-events-figs-3-4,
@@ -1367,9 +1396,6 @@ footer img {
   }
 
   /* COOKIE CASE STUDY STYLES */
-  #cookie-body {
-    background-image: url("../img/bg_yellowzinnia.jpg");
-  }
 
   .cookie-img {
     display: none;
@@ -1380,9 +1406,6 @@ footer img {
   }
 
   /* IFDB CASE STUDY STYLES */
-  #ifdb-body {
-    background-image: url("../img/bg_bluewhiteflowers.gif");
-  }
 
   .study-header {
     flex-direction: column;
@@ -1489,6 +1512,19 @@ footer img {
     background-image: url("../img/pink-background.gif");
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Case study backgrounds (mobile): match the original HTML behavior */
+  body#cookie-body {
+    background-image: url("../img/bg_yellowzinnia.jpg");
+  }
+
+  body#dev-events-body {
+    background-image: url("../img/wp24.gif");
+  }
+
+  body#ifdb-body {
+    background-image: url("../img/bg_bluewhiteflowers.gif");
   }
 
   .container-wide {
@@ -1681,6 +1717,19 @@ footer img {
     background-image: url("../img/pink-background.gif");
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Case study backgrounds (landscape): match the original HTML behavior */
+  body#cookie-body {
+    background-image: url("../img/bg_yellowzinnia.jpg");
+  }
+
+  body#dev-events-body {
+    background-image: url("../img/wp24.gif");
+  }
+
+  body#ifdb-body {
+    background-image: url("../img/bg_bluewhiteflowers.gif");
   }
 
   .container {

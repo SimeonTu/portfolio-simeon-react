@@ -15,9 +15,9 @@ function DevEventsCaseStudy() {
 
         <div className="study-header">
           <div className="study-flavor-text" style={{ alignItems: 'center', marginTop: '2.5rem' }}>
-            <h1 style={{ lineHeight: '5rem' }} className="study-h1 awesome">
-              <TextWobble>Dev Events</TextWobble>
-            </h1>
+            <TextWobble className="study-h1 awesome" style={{ lineHeight: '5rem' }}>
+              Dev Events
+            </TextWobble>
             <div className="globe-new-container">
               <img className="cookie-img" src="/img/globe.gif" alt="Globe" />
               <img className="newblast" src="/img/newblast.gif" alt="New" />

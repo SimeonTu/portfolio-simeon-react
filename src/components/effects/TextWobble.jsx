@@ -1,9 +1,9 @@
-function TextWobble({ children, className = '' }) {
+function TextWobble({ children, className = '', style, as: Component = 'h1' }) {
   const text = typeof children === 'string' ? children : String(children ?? '');
   const letters = text.split('');
 
   return (
-    <h1 className={`wobble ${className}`.trim()}>
+    <Component className={`wobble ${className}`.trim()} style={style}>
       {letters.map((letter, idx) => {
         const delay = (idx + 1) * 50;
         // Preserve spaces so layout doesn't collapse
@@ -14,7 +14,7 @@ function TextWobble({ children, className = '' }) {
           </span>
         );
       })}
-    </h1>
+    </Component>
   );
 }
 
