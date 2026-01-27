@@ -120,10 +120,12 @@ function DraggableWindow({ children }) {
       pointerId = e.pointerId;
       handle.setPointerCapture(pointerId);
 
+      // Lock current rendered position before clearing transforms to avoid jumps.
+      const rect = node.getBoundingClientRect();
+      node.style.left = `${rect.left}px`;
+      node.style.top = `${rect.top}px`;
       // Legacy behavior: clear transforms at start
       node.style.transform = 'translate(0,0)';
-
-      const rect = node.getBoundingClientRect();
       startPointerX = e.clientX;
       startPointerY = e.clientY;
 

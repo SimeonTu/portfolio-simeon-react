@@ -32,7 +32,7 @@ function Home() {
         </p>
 
         <Link className="hvr-pulse-grow index-links" to="/work">Check out some of my projects</Link>
-        <a className="hvr-pulse-grow index-links" target="_blank" rel="noopener noreferrer" href="/Simeon Tudzharov CV.pdf">
+        <a className="hvr-pulse-grow index-links" href="/Simeon%20Tudzharov%20CV.pdf" download="Simeon Tudzharov CV.pdf">
           Download my CV
         </a>
       </div>
