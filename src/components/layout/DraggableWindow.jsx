@@ -14,6 +14,13 @@ function DraggableWindow({ children }) {
   const { play: playScore } = useAudio('/sounds/coin.mp3', 0.5);
 
   const isHomePage = location.pathname === '/';
+  const isCaseStudy = location.pathname.startsWith('/case-studies/');
+  const isNotFound =
+    !isHomePage &&
+    location.pathname !== '/about' &&
+    location.pathname !== '/work' &&
+    location.pathname !== '/contact' &&
+    !isCaseStudy;
 
   // 1:1 port of the legacy jQuery UI approach:
   // - drag the `.draggable` element via `.drag-handle`
@@ -227,7 +234,7 @@ function DraggableWindow({ children }) {
     <div ref={nodeRef} className={getContainerClass()}>
       <div ref={handleRef} className="drag-handle" />
       <main>
-        <div className={`main-content-wrapper${location.pathname === '/about' ? ' main-about' : ''}`}>
+        <div className={`main-content-wrapper${location.pathname === '/about' ? ' main-about' : ''}${isNotFound ? ' main-notfound' : ''}`}>
           <Navigation />
           {children}
         </div>

@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import CookieCaseStudy from './pages/CookieCaseStudy';
 import DevEventsCaseStudy from './pages/DevEventsCaseStudy';
 import IFDbCaseStudy from './pages/IFDbCaseStudy';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="case-studies/cookie" element={<CookieCaseStudy />} />
           <Route path="case-studies/dev-events" element={<DevEventsCaseStudy />} />
           <Route path="case-studies/ifdb" element={<IFDbCaseStudy />} />
+        <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

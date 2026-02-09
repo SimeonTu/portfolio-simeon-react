@@ -1,0 +1,49 @@
+.notFound {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.content {
+  max-width: 640px;
+  width: 100%;
+}
+
+.notFound :global(.awesome) {
+  font-size: 90px;
+}
+
+.message {
+  margin: 0.75rem 0 1.5rem;
+  text-transform: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.actions :global(.main-button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-width: 632px) {
+  .actions {
+    width: 100%;
+  }
+
+  .actions :global(.main-button) {
+    width: min(220px, 100%);
+  }
+}
