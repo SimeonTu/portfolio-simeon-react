@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 
 function Home() {
   return (
-    <>
+    <div className={styles.homeContent}>
       <div className={styles.logoDiv}>
         <img className={styles.logoCat} src="/img/artemis.gif" alt="decorative kitty" />
         <div className={styles.logoText}>
@@ -36,7 +36,7 @@ function Home() {
           Download my CV
         </a>
       </div>
-    </>
+    </div>
   );
 }
 
